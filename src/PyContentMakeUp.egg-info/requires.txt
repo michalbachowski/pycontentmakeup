@@ -1,4 +1,0 @@
-PyPromise==1.1.0
-six==1.3.0
-invoke>=0.5.1
-PyYAML>=3.10.0
