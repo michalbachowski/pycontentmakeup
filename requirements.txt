@@ -3,5 +3,5 @@ jinja2>=2.7.0
 textile>=2.1.5
 markdown2>=2.1.1
 six>=1.3.0
-https://github.com/michalbachowski/pyspd/archive/0.1.0.zip#egg=pyspd-0.1.0
+https://github.com/michalbachowski/pyspd/archive/0.2.0.zip#egg=pyspd-0.2.0
 http://github.com/michalbachowski/pypromise/archive/1.1.2.zip#egg=PyPromise-1.1.2
