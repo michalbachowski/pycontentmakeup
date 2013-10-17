@@ -1,0 +1,3 @@
+mock
+coverage
+https://github.com/michalbachowski/pytestutils/archive/0.2.2.zip#egg=testutils-0.2.2

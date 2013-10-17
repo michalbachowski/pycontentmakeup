@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+src/PyContentMakeUp.egg-info/PKG-INFO
+src/PyContentMakeUp.egg-info/SOURCES.txt
+src/PyContentMakeUp.egg-info/dependency_links.txt
+src/PyContentMakeUp.egg-info/requires.txt
+src/PyContentMakeUp.egg-info/top_level.txt
+src/contentmakeup/__init__.py
+test/__init__.py
+test/runtest.py
+test/types_test.py
+test/storage/__init__.py
+test/storage/abstract_test.py
+test/storage/memory_test.py

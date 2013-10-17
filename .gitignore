@@ -1,0 +1,6 @@
+.vagrant
+.tox
+*.pyc
+__pycache__
+cookbooks
+Berksfile.lock
