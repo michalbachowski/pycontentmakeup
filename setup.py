@@ -20,4 +20,4 @@ setup(name='PyContentMakeUp',
     package_dir={'': 'src', 'hook': 'src/hook', 'template': 'src/template',
         'markup': 'src/markup'},
     install_requires=['PyPromise==1.1.0', 'pyspd==0.1.0', 'six==1.3.0',
-        'PyYAML>=3.10.0', 'pyspd=>0.2.0'])
+        'PyYAML>=3.10.0', 'pyspd=>0.2.0', 'pinject>=0.10.2'])
