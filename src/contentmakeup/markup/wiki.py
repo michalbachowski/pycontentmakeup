@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import textile
+from wikimarkup import parse
 from contentmakeup.markup import ParserInterface
 
 
-class Textile(ParserInterface):
+class Wiki(ParserInterface):
 
     def accepts(self):
-        return ('textile',)
+        return ('wiki',)
 
     def parse(self, input_type, output_format, text):
-        return textile.textile(text)
+        return parse(text)

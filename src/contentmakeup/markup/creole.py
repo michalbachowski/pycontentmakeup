@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import textile
+from creole import creole2html
 from contentmakeup.markup import ParserInterface
 
 
-class Textile(ParserInterface):
+class Creole(ParserInterface):
 
     def accepts(self):
-        return ('textile',)
+        return ('creole',)
 
     def parse(self, input_type, output_format, text):
-        return textile.textile(text)
+        return creole2html(text)

@@ -6,12 +6,12 @@ from jinja2 import Environment
 
 class Jinja2(ProcessorInterface):
 
-    def activate(self):
+    def __init__(self):
         self.env = Environment()
 
-    def extensions(self):
+    def accepts(self):
         return ('jinja2',)
 
-    def compile(self, template):
+    def compile(self, input_type, output_format, template):
         tpl = self.env.from_string(template)
         return tpl.render
