@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from contentmakeup.template import Processor
+from contentmakeup.template import ProcessorInterface
 from jinja2 import Environment
 
 
-class Jinja2(Processor):
+class Jinja2(ProcessorInterface):
 
     def activate(self):
         self.env = Environment()

@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from yapsy.IPlugin import IPlugin
+from pyspd import MountPoint
+import six
 
 
-class Processor(IPlugin):
+@six.add_metaclass(MountPoint)
+class ProcessorInterface(object):
     """
     Abstract template processor class
     """
