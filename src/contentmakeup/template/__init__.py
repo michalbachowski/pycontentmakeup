@@ -11,7 +11,7 @@ class ProcessorInterface(object):
     """
     Abstract template processor class
     """
-    accepts = None
+    accepts = tuple()
     outputs = ('html', )
 
     def compile(self, input_type, output_format, template):
