@@ -9,20 +9,8 @@ class ParserInterface(object):
     """
     Abstract class for markup parser
     """
-
-    def accepts(self):
-        """
-        Returns set of supported input types
-        """
-        raise NotImplementedError("Provide list of supported input types")
-
-    def outputs(self):
-        """
-        Returns set of supported output fromats
-
-        :returns: set -- set of supported output formats. Defaults to 'html'
-        """
-        return ('html',)
+    accepts = tuple()
+    outputs = ('html',)
 
     def parse(self, input_type, output_format, text):
         """

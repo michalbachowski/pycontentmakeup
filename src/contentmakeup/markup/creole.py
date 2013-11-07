@@ -5,9 +5,7 @@ from contentmakeup.markup import ParserInterface
 
 
 class Creole(ParserInterface):
-
-    def accepts(self):
-        return ('creole',)
+    accepts = ('creole',)
 
     def parse(self, input_type, output_format, text):
         return creole2html(text)

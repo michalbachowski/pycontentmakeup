@@ -5,9 +5,7 @@ from contentmakeup.markup import ParserInterface
 
 
 class Wiki(ParserInterface):
-
-    def accepts(self):
-        return ('wiki',)
+    accepts = ('wiki',)
 
     def parse(self, input_type, output_format, text):
         return parse(text)
