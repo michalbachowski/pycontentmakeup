@@ -6,9 +6,7 @@ from contentmakeup.template import ProcessorInterface
 
 
 class Mustache(ProcessorInterface):
-
-    def accepts(self):
-        return ('mustache',)
+    accepts = ('mustache',)
 
     def compile(self, input_type, output_format, template):
         return partial(pystache.render, pystache.parse(template))

@@ -9,23 +9,8 @@ class ProcessorInterface(object):
     """
     Abstract template processor class
     """
-
-    def accepts(self):
-        """
-        Returns list of supported template types
-
-        :returns: set -- set of supported template types
-        :raises:  NotImplementedError
-        """
-        raise NotImplementedError("Provide list of supported template types")
-
-    def outputs(self):
-        """
-        Returns set of supported output fromats
-
-        :returns: set -- set of supported output formats. Defaults to 'html'
-        """
-        return ('html',)
+    accepts = None
+    outputs = ('html', )
 
     def compile(self, input_type, output_format, template):
         """
