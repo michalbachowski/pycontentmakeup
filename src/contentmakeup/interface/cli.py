@@ -20,6 +20,7 @@ from contentmakeup.strategy.configuration_parser import ConfigurationParser
 from contentmakeup.strategy.yaml_loader import YamlLoader
 from contentmakeup.strategy.app_initializer import AppInitializer
 from contentmakeup.strategy.plugin_loader import PluginLoader
+from contentmakeup.strategy.files_finder import FilesFinder
 
 ##
 # possible support for argcomplete
@@ -64,8 +65,8 @@ def get_object_graph(args):
 class Runner(object):
 
     @copy_args_to_public_fields
-    def __init__(self, app_initializer, files, output_format):
-        app_initializer(files, output_format)
+    def __init__(self, app_initializer, args, files_finder, output_format):
+        app_initializer(files_finder(args.file), output_format)
         self.exit_code = 0
 
 
