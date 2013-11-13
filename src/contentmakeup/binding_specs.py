@@ -11,8 +11,6 @@ from pinject import BindingSpec
 #
 from pycomber import merger
 from pycomber.configuration import ConfigurationImmutable
-from pycomber.strategies import MergeNone
-from pycomber.value_objects import ImmutableDict
 
 
 class AppBindingSpec(BindingSpec):
@@ -28,10 +26,6 @@ class AppBindingSpec(BindingSpec):
 
     def provide_merger(self):
         ConfigurationImmutable()(merger)
-        NoneType = type(None)
-        types = (list, dict, set, tuple, ImmutableDict, frozenset)
-        merger.set_strategy(MergeNone(merger), NoneType, types)
-        merger.set_strategy(MergeNone(merger), types, NoneType)
         return merger
 
     def provide_object_graph(self):

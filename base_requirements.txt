@@ -3,5 +3,5 @@ pinject>=0.10.2
 layered-yaml-attrdict-config>=12.07.1
 PyYaml>=3.10.0
 https://github.com/michalbachowski/pyspd/archive/0.3.0.zip#egg=pyspd-0.3.0
-https://github.com/michalbachowski/pycomber/archive/0.1.0.zip#egg=pycomber-0.1.0
+https://github.com/michalbachowski/pycomber/archive/0.2.0.zip#egg=pycomber-0.2.0
 http://github.com/michalbachowski/pypromise/archive/1.1.2.zip#egg=PyPromise-1.1.2
