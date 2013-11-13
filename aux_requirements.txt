@@ -2,8 +2,8 @@ pystache>=0.5.3
 jinja2>=2.7.0
 mako>=0.9.0
 textile>=2.1.5
-markdown2>=2.1.1
+markdown2>=2.1.0
 docutils>=0.11.0
-python-creole>=1.0.7
+python-creole==1.0.6
 bbcode>=1.0.6
 py-wikimarkup>=1.0.2
