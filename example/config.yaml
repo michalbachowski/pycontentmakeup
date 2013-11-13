@@ -1,0 +1,18 @@
+templates_directory: templates/
+template_file: default.jinja2
+site_title: Test MB
+
+plugins:
+    module:
+        - contentmakeup.strategy.metadata_extractor
+        - contentmakeup.strategy.plugin_manager
+        - contentmakeup.strategy.content_parser
+        - contentmakeup.strategy.format_discovery
+        - contentmakeup.strategy.input_reader
+        - contentmakeup.strategy.output_writer
+        - contentmakeup.strategy.app_runner
+        - contentmakeup.strategy.template_renderer
+        - contentmakeup.strategy.template_discovery
+        - contentmakeup.markup.markdown
+        - contentmakeup.template.html
+        - contentmakeup.template.jinja2
