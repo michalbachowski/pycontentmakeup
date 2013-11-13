@@ -1,5 +1,5 @@
 testrunner=./runtest.py
-fix_pythonpath=export PYTHONPATH="`readlink -f '../src/'`:$$PYTHONPATH" &&
+fix_pythonpath=PYTHONPATH="`readlink -f '../src/'`:$$PYTHONPATH"
 
 test:
 	$(testrunner)
