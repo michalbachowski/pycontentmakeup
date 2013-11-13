@@ -16,6 +16,6 @@ setup(name='PyContentMakeUp',
     author='Michał Bachowski',
     author_email='michal@bachowski.pl',
     packages=['contentmakeup', 'contentmakeup.hook', 'contentmakeup.template',
-        'contentmakeup.markup'],
-    package_dir={'': 'src', 'hook': 'src/hook', 'template': 'src/template',
-        'markup': 'src/markup'})
+        'contentmakeup.markup', 'contentmakeup.interface',
+        'contentmakeup.strategy'],
+    package_dir={'': 'src'})
