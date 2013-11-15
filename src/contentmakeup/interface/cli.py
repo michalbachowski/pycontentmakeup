@@ -14,15 +14,6 @@ from contentmakeup.interface.binding_specs import CliBindingSpec
 from pinject import new_object_graph, copy_args_to_public_fields
 
 ##
-# parsing configuration
-#
-from contentmakeup.strategy.configuration_parser import ConfigurationParser
-from contentmakeup.strategy.yaml_loader import YamlLoader
-from contentmakeup.strategy.app_initializer import AppInitializer
-from contentmakeup.strategy.plugin_loader import PluginLoader
-from contentmakeup.strategy.files_finder import FilesFinder
-
-##
 # possible support for argcomplete
 try:
     import argcomplete
@@ -70,6 +61,14 @@ class Runner(object):
         self.exit_code = 0
 
 
+def load_default_modules():
+    from contentmakeup.strategy.configuration_parser import ConfigurationParser
+    from contentmakeup.strategy.yaml_loader import YamlLoader
+    from contentmakeup.strategy.app_initializer import AppInitializer
+    from contentmakeup.strategy.plugin_loader import PluginLoader
+    from contentmakeup.strategy.files_finder import FilesFinder
+
+
 def main():
     """ main method """
     parser = argparser()
@@ -81,4 +80,7 @@ def main():
 
 
 if '__main__' == __name__:
+    ##
+    # default strategies are loaded only when script is executed as executable
+    load_default_modules()
     sys.exit(main())
