@@ -12,5 +12,5 @@ class ContentParser(StrategyInterface):
         self.markup_manager = markup_manager
 
     def __call__(self, content, content_type, output_format):
-        return self.markup_manager.markup(content_type, output_format).parse(\
+        return self.markup_manager(content_type, output_format).parse(\
                                         content_type, output_format, content)

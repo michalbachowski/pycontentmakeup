@@ -25,6 +25,6 @@ class TemplateRenderer(StrategyInterface):
 
     def _compile(self, template_file, output_format):
         template_type = self.discover_format(template_file)
-        return self.template_manager.template(template_type, \
+        return self.template_manager(template_type, \
             output_format).compile(template_type, output_format, \
             self.read_input(template_file))
