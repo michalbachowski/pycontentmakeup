@@ -1,12 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-##
-# Python stdlib
-#
-import sys
 
 ##
-# library modules
+# own modules
 #
 from contentmakeup.strategy import StrategyInterface
 
@@ -15,8 +11,8 @@ class AppRunner(StrategyInterface):
     subject = ('app_runner',)
 
     def __init__(self, content_parser, metadata_extractor, template_discovery, \
-            template_renderer, config, merger, input_reader, format_discovery, \
-            output_writer):
+            template_renderer, config, object_merger, input_reader, \
+            format_discovery, output_writer):
         self.parse_content = content_parser
         self.extract_metadata = metadata_extractor
         self.render_template = template_renderer
@@ -25,7 +21,7 @@ class AppRunner(StrategyInterface):
         self.read_input = input_reader
         self.write_output = output_writer
         self.config = config
-        self.merge = merger
+        self.merge = object_merger
 
     def __call__(self, input_path, output_path, default_output_format):
         input_format = self.discover_format(input_path)
