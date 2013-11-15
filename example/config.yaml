@@ -4,17 +4,17 @@ site_title: Test MB
 
 plugins:
     module:
-        - contentmakeup.strategy.metadata_extractor
-        - contentmakeup.strategy.plugin_manager
+        - contentmakeup.markup.markdown
+        - contentmakeup.strategy.app_runner
+        - contentmakeup.strategy.binding_specs
         - contentmakeup.strategy.content_parser
         - contentmakeup.strategy.format_discovery
         - contentmakeup.strategy.input_reader
+        - contentmakeup.strategy.metadata_extractor
+        - contentmakeup.strategy.object_merger
         - contentmakeup.strategy.output_writer
-        - contentmakeup.strategy.app_runner
+        - contentmakeup.strategy.plugin_manager
         - contentmakeup.strategy.template_renderer
         - contentmakeup.strategy.template_discovery
-        - contentmakeup.strategy.binding_specs
-        - contentmakeup.strategy.object_merger
-        - contentmakeup.markup.markdown
         - contentmakeup.template.html
         - contentmakeup.template.jinja2
