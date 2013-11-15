@@ -13,6 +13,7 @@ plugins:
         - contentmakeup.strategy.app_runner
         - contentmakeup.strategy.template_renderer
         - contentmakeup.strategy.template_discovery
+        - contentmakeup.strategy.binding_specs
         - contentmakeup.strategy.object_merger
         - contentmakeup.markup.markdown
         - contentmakeup.template.html

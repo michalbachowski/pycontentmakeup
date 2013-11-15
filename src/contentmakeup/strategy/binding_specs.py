@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from pinject import BindingSpec
+from contentmakeup.binding_specs import BindingSpecMountPoint
 from contentmakeup.strategy import StrategyInterface
 
 
-class StrategyBindingSpec(BindingSpec):
+class StrategyBindingSpec(BindingSpecMountPoint):
 
     def configure(self, bind):
         for plugin in StrategyInterface.plugins:

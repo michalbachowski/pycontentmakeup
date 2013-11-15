@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 ##
-# library modules
+# own modules
 #
 from contentmakeup.strategy import StrategyInterface
 
 ##
 # binding specs modules
-from contentmakeup.strategy.binding_specs import StrategyBindingSpec
-from contentmakeup.template.binding_specs import TemplateBindingSpec
+from contentmakeup.binding_specs import BindingSpecMountPoint
 
 ##
 # pinject (dependency injection container)
@@ -44,8 +44,8 @@ class AppInitializer(StrategyInterface):
 
     def init_object_graph(self, config):
         self.app_binding_spec = AppBindingSpec(config)
-        specs = [self.app_binding_spec, StrategyBindingSpec(), \
-                 TemplateBindingSpec()]
+        specs = [bs() for bs in BindingSpecMountPoint.plugins]
+        specs.append(self.app_binding_spec)
         object_graph = new_object_graph(binding_specs=specs)
         self.app_binding_spec.add_object_graph(object_graph)
         return object_graph
