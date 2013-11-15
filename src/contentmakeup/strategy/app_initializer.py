@@ -9,12 +9,11 @@ from contentmakeup.strategy import StrategyInterface
 # binding specs modules
 from contentmakeup.strategy.binding_specs import StrategyBindingSpec
 from contentmakeup.template.binding_specs import TemplateBindingSpec
-from contentmakeup.binding_specs import AppBindingSpec
 
 ##
-# pinject modules (dependency injection container)
+# pinject (dependency injection container)
 #
-from pinject import new_object_graph
+from pinject import new_object_graph, BindingSpec
 
 
 class AppInitializer(StrategyInterface):
@@ -50,3 +49,21 @@ class AppInitializer(StrategyInterface):
         object_graph = new_object_graph(binding_specs=specs)
         self.app_binding_spec.add_object_graph(object_graph)
         return object_graph
+
+
+class AppBindingSpec(BindingSpec):
+    """Configuration specification for pinject"""
+
+    def __init__(self, config):
+        self.config = config
+        self.object_graph = None
+
+    def add_object_graph(self, object_graph):
+        self.object_graph = object_graph
+        return self
+
+    def provide_object_graph(self):
+        return self.object_graph
+
+    def provide_config(self, plugin_loader):
+        return self.config
