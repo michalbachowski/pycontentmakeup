@@ -10,16 +10,13 @@ class ProcessorInterface(object):
     Abstract template processor class
     """
     accepts = tuple()
-    outputs = ('html', )
 
-    def compile(self, input_type, output_format, template):
+    def compile(self, input_type, template):
         """
         Compiles given template
 
         :param    input_type: name of template type
         :type     input_type: string
-        :param    output_format: name of output format
-        :type     output_format: string
         :param    template: template string
         :type     template: string
         :returns: callable that when called with dict will render template

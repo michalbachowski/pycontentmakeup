@@ -8,5 +8,5 @@ from contentmakeup.template import ProcessorInterface
 class Mustache(ProcessorInterface):
     accepts = ('mustache',)
 
-    def compile(self, input_type, output_format, template):
+    def compile(self, input_type, template):
         return partial(pystache.render, pystache.parse(template))

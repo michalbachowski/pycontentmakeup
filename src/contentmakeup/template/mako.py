@@ -8,5 +8,5 @@ from mako.template import Template
 class Mako(ProcessorInterface):
     accepts = ('mako',)
 
-    def compile(self, input_type, output_format, template):
+    def compile(self, input_type, template):
         return Template(template).render
