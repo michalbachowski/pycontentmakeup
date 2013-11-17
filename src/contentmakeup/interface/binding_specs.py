@@ -15,8 +15,5 @@ class CliBindingSpec(BindingSpec):
     def provide_config(self, configuration_parser):
         return configuration_parser(self.args.config)
 
-    def provide_output_format(self):
-        return self.args.output_format
-
     def provide_args(self):
         return self.args

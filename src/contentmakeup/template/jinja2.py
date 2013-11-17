@@ -11,6 +11,6 @@ class Jinja2(ProcessorInterface):
     def __init__(self):
         self.env = Environment()
 
-    def compile(self, input_type, output_format, template):
+    def compile(self, input_type, template):
         tpl = self.env.from_string(template)
         return tpl.render

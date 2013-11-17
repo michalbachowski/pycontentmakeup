@@ -30,9 +30,6 @@ def argparser():
             default=os.path.join(os.getcwd(), 'config.yaml'), \
             help='Path to configuration file')
 
-    parser.add_argument('-o, --output_format', dest='output_format', type=str, \
-            default='html', help='Output format. Defaults to %(default)s')
-
     parser.add_argument('file', type=str, default='-', nargs='+', \
         help="""Name of input file in format:
         "INPUT_FILENAME OUTPUT_FILENAME"
@@ -56,8 +53,8 @@ def get_object_graph(args):
 class Runner(object):
 
     @copy_args_to_public_fields
-    def __init__(self, app_initializer, args, files_finder, output_format):
-        app_initializer(files_finder(args.file), output_format)
+    def __init__(self, app_initializer, args, files_finder):
+        app_initializer(files_finder(args.file))
         self.exit_code = 0
 
 
