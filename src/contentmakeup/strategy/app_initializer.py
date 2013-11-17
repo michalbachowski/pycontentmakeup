@@ -30,11 +30,11 @@ class AppInitializer(StrategyInterface):
         if 'plugins' in config:
             plugin_loader(config['plugins'])
 
-    def __call__(self, files, default_output_format):
+    def __call__(self, files):
         with self.object_graph.provide(AppInitializer._Helper).app_runner as \
             runner:
             for (input_path, output_path) in files:
-                runner(input_path, output_path, default_output_format)
+                runner(input_path, output_path)
 
     @property
     def object_graph(self):

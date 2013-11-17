@@ -1,5 +1,6 @@
 templates_directory: templates/
 template_file: default.jinja2
+output_format: html
 site_title: Test MB
 
 plugins:

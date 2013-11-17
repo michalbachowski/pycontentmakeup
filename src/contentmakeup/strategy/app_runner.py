@@ -23,18 +23,16 @@ class AppRunner(StrategyInterface):
         self.config = config
         self.merge = object_merger
 
-    def __call__(self, input_path, output_path, default_output_format):
+    def __call__(self, input_path, output_path):
         input_format = self.discover_format(input_path)
-        output_format = self.discover_format(output_path, \
-                                                        default_output_format)
         content = self.read_input(input_path)
         (metadata, raw_content) = self.extract_metadata(content, input_format)
         config = self.merge(metadata, self.config)
         template_file = self.discover_template(config)
         parsed_content = self.parse_content(raw_content, input_format, \
-                                                                output_format)
+                                                    config['output_format'])
         rendered_content = self.render_template(parsed_content, config, \
-                                                template_file, output_format)
+                                                template_file)
         self.write_output(output_path, rendered_content)
         return rendered_content
 
