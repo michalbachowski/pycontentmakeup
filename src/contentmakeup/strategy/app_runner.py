@@ -12,7 +12,7 @@ class AppRunner(StrategyInterface):
 
     def __init__(self, content_parser, metadata_extractor, template_discovery, \
             template_renderer, config, object_merger, input_reader, \
-            format_discovery, output_writer):
+            format_discovery, output_writer, output_path_discovery):
         self.parse_content = content_parser
         self.extract_metadata = metadata_extractor
         self.render_template = template_renderer
@@ -22,9 +22,11 @@ class AppRunner(StrategyInterface):
         self.write_output = output_writer
         self.config = config
         self.merge = object_merger
+        self.discover_output_path = output_path_discovery
 
     def __call__(self, input_path):
         input_format = self.discover_format(input_path)
+        output_path = self.discover_output_path(input_path)
         content = self.read_input(input_path)
         (metadata, raw_content) = self.extract_metadata(content, input_format)
         config = self.merge(metadata, self.config)
