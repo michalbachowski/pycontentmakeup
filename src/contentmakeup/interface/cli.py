@@ -53,8 +53,8 @@ def get_object_graph(args):
 class Runner(object):
 
     @copy_args_to_public_fields
-    def __init__(self, app_initializer, args, files_finder):
-        app_initializer(files_finder(args.file))
+    def __init__(self, app_initializer, args, input_files_finder):
+        app_initializer(input_files_finder(args.file))
         self.exit_code = 0
 
 
@@ -63,7 +63,7 @@ def load_default_modules():
     from contentmakeup.strategy.yaml_loader import YamlLoader
     from contentmakeup.strategy.app_initializer import AppInitializer
     from contentmakeup.strategy.plugin_loader import PluginLoader
-    from contentmakeup.strategy.files_finder import FilesFinder
+    from contentmakeup.strategy.input_files_finder import InputFilesFinder
 
 
 def main():
