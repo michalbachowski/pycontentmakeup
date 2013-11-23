@@ -23,7 +23,7 @@ class AppRunner(StrategyInterface):
         self.config = config
         self.merge = object_merger
 
-    def __call__(self, input_path, output_path):
+    def __call__(self, input_path):
         input_format = self.discover_format(input_path)
         content = self.read_input(input_path)
         (metadata, raw_content) = self.extract_metadata(content, input_format)

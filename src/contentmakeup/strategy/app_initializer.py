@@ -33,8 +33,7 @@ class AppInitializer(StrategyInterface):
     def __call__(self, files):
         with self.object_graph.provide(AppInitializer._Helper).app_runner as \
             runner:
-            for (input_path, output_path) in files:
-                runner(input_path, output_path)
+            map(runner, files)
 
     @property
     def object_graph(self):
