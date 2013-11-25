@@ -9,5 +9,5 @@ class TemplateDiscovery(StrategyInterface):
     subject = ('template_discovery',)
 
     def __call__(self, config):
-        return os.path.join(config['templates_directory'], \
+        return os.path.join(config['directories']['templates'], \
                                                         config['template_file'])

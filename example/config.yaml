@@ -1,6 +1,7 @@
 base_path: /home/vagrant/app/example/
-pages_directory: pages
-templates_directory: templates/
+directories:
+    pages: pages
+    templates: templates/
 template_file: default.jinja2
 output_format: html
 output_path: "-"
