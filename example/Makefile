@@ -1,5 +1,7 @@
+cmd=python -B -mcontentmakeup.interface.cli pages/test.md
+
 local:
-	PYTHONPATH="/home/vagrant/app/src/:$$PYTHONPATH" python -mcontentmakeup.interface.cli test.md 
+	PYTHONPATH="/home/vagrant/app/src/:$$PYTHONPATH" $(cmd)
 
 global:
-	python -mcontentmakeup.interface.cli test.md
+	$(cmd)
