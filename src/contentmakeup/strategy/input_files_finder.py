@@ -4,7 +4,6 @@
 # Python stdlib
 #
 import sys
-from itertools import chain
 
 ##
 # library modules
@@ -12,12 +11,11 @@ from itertools import chain
 from contentmakeup.strategy import StrategyInterface
 
 
-class FilesFinder(StrategyInterface):
-    subject = ('files_finder',)
+class InputFilesFinder(StrategyInterface):
+    subject = ('input_files_finder',)
 
     def __call__(self, files):
-        return map(lambda line: list(chain(line.strip().split(' '), \
-                                        ['-']))[0:2], self._find_source(files))
+        return self._find_source(files)
 
     def _find_source(self, files):
         if files is None:

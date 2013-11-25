@@ -1,6 +1,8 @@
 templates_directory: templates/
 template_file: default.jinja2
 output_format: html
+output_path: "-"
+#build/{filename}.{ext}
 site_title: Test MB
 
 plugins:
@@ -14,6 +16,7 @@ plugins:
         - contentmakeup.strategy.markup_manager
         - contentmakeup.strategy.metadata_extractor
         - contentmakeup.strategy.object_merger
+        - contentmakeup.strategy.output_path_discovery
         - contentmakeup.strategy.output_writer
         - contentmakeup.strategy.template_manager
         - contentmakeup.strategy.template_renderer

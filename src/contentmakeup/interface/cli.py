@@ -31,13 +31,9 @@ def argparser():
             help='Path to configuration file')
 
     parser.add_argument('file', type=str, default='-', nargs='+', \
-        help="""Name of input file in format:
-        "INPUT_FILENAME OUTPUT_FILENAME"
-        (please notice dublequotes around pair of file names)
-        If OUTPUT_FILENAME is ommited or set to "-" the STDOUT will be used.
-
-        If file is specified as '%(default)s' names of input file
-        will be read from STDIN - each (input, output) pair in single line""")
+        help="""Name of input file.
+        If specified as '%(default)s' names of input file
+        will be read from STDIN - each input file in single line""")
 
     # verbosity
     parser.add_argument('-q, --quiet', dest='quiet', action='store_true')
@@ -53,8 +49,8 @@ def get_object_graph(args):
 class Runner(object):
 
     @copy_args_to_public_fields
-    def __init__(self, app_initializer, args, files_finder):
-        app_initializer(files_finder(args.file))
+    def __init__(self, app_initializer, args, input_files_finder):
+        app_initializer(input_files_finder(args.file))
         self.exit_code = 0
 
 
@@ -63,7 +59,7 @@ def load_default_modules():
     from contentmakeup.strategy.yaml_loader import YamlLoader
     from contentmakeup.strategy.app_initializer import AppInitializer
     from contentmakeup.strategy.plugin_loader import PluginLoader
-    from contentmakeup.strategy.files_finder import FilesFinder
+    from contentmakeup.strategy.input_files_finder import InputFilesFinder
 
 
 def main():
