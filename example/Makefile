@@ -1,4 +1,4 @@
-cmd=python -B -mcontentmakeup.interface.cli test.md
+cmd=python -B -mcontentmakeup.interface.cli pages/test.md
 
 local:
 	PYTHONPATH="/home/vagrant/app/src/:$$PYTHONPATH" $(cmd)

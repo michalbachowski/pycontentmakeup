@@ -1,3 +1,5 @@
+base_path: /home/vagrant/app/example/
+pages_directory: pages
 templates_directory: templates/
 template_file: default.jinja2
 output_format: html
@@ -12,6 +14,7 @@ plugins:
         - contentmakeup.strategy.binding_specs
         - contentmakeup.strategy.content_parser
         - contentmakeup.strategy.format_discovery
+        - contentmakeup.strategy.input_path_discovery
         - contentmakeup.strategy.input_reader
         - contentmakeup.strategy.markup_manager
         - contentmakeup.strategy.metadata_extractor
